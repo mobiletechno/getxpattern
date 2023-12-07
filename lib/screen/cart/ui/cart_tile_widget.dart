@@ -29,17 +29,17 @@ class CartTileWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(productDataModel.name!))),
+                    image: NetworkImage(productDataModel.slug!))),
           ),
           const SizedBox(height: 20),
-          Text(productDataModel.name!,
+          Text(productDataModel.slug!,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          Text(productDataModel.body!),
+          Text(productDataModel.slug!),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("\$" + productDataModel.body.toString(),
+              Text("\$" + productDataModel.slug.toString(),
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               Row(
                 children: [

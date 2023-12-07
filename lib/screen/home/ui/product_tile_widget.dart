@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../../../app_config/app_constant.dart';
 import '../models/Home_list_model.dart';
 
 
@@ -16,6 +17,7 @@ class ProductTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -25,7 +27,7 @@ class ProductTileWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 200,
+height: AppConstant.RESPONSIVEHEIGHT*20,
             width: double.maxFinite,
             decoration: BoxDecoration(
                 image: DecorationImage(
@@ -33,15 +35,15 @@ class ProductTileWidget extends StatelessWidget {
                     image: NetworkImage("https://images.livemint.com/rf/Image-920x613/LiveMint/Period2/2017/10/31/Photos/Processed/fruits-kFLF--621x414@LiveMint.jpg"))),
           ),
           const SizedBox(height: 20),
-          Text(productDataModel.name!,overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          Text(productDataModel.body!,overflow: TextOverflow.ellipsis),
+      SizedBox(width: AppConstant.RESPONSIVEWIDTH*80, child:Text(productDataModel.slug!,overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))),
+          SizedBox(width: AppConstant.RESPONSIVEWIDTH*80,child:Text(productDataModel.slug!,overflow: TextOverflow.ellipsis)),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(productDataModel.email!,overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              SizedBox(width: AppConstant.RESPONSIVEWIDTH*60, child:Text(productDataModel.slug!,overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))),
               Row(
                 children: [
                   IconButton(

@@ -1,6 +1,6 @@
 class AppConstant {
-  static String BASEURL = "https://jsonplaceholder.typicode.com/posts";
-  static String LIST_API = "/comments";
+  static String BASEURL = "https://blog.khophi.co";
+  static String LIST_API = "/wp-json/wp/v2/posts/?per_page=";
 
   static double MOBILEHEIGHT = 0.0;
   static double MOBILEWIDTH = 0.0;

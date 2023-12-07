@@ -19,7 +19,7 @@ class RepoImpl implements Repo {
   Future<dynamic> getList(int pagination) async {
     try {
       final response = await _httpService.getRequest(
-          "${AppConstant.BASEURL}/$pagination${AppConstant.LIST_API}");
+          "${AppConstant.BASEURL}${AppConstant.LIST_API}$pagination&context=embed");
 
 
       if (response.statusCode == 200) {

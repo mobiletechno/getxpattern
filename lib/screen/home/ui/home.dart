@@ -34,9 +34,15 @@ class Home extends StatelessWidget {
                   ? Center(
                   child: CupertinoActivityIndicator())
                   :ListView.builder(
-                  itemCount: controller.RxHomeList.length,
+                controller: controller.scrollController,
+                  itemCount: controller.RxHomeList.length+1,
                   itemBuilder: (context, index) {
-                    return ProductTileWidget(
+                    return    index > controller.RxHomeList.length-1  ?
+                    Container(
+                      color: Colors.transparent,
+                      child: Center(child: CircularProgressIndicator()),
+                    )
+                        :ProductTileWidget(
 
                         productDataModel: controller.RxHomeList[index]);
                   }),
